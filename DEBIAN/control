@@ -1,0 +1,8 @@
+Package: mactable
+Version: INSTALL_VERSION
+Section: custom
+Priority: optional
+Architecture: INSTALL_ARCH
+Installed-Size: INSTALL_SIZE
+Maintainer: Michal Skrha <michal@skrha.cz>
+Description: Print the MAC table of specified Linux bridge, sorted by MAC address and without the local ones.

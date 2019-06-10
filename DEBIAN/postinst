@@ -1,0 +1,4 @@
+#! /bin/bash
+
+chown root:root /usr/sbin/mactable
+chmod 755 /usr/sbin/mactable
