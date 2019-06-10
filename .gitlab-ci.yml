@@ -1,0 +1,38 @@
+stages:
+  - package
+
+amd64:
+ stage: package
+ tags:
+  - golang
+  - debian
+ only:
+  - tags
+ script:
+  - export GOROOT='/opt/go'
+  - export PATH="${PATH}:${GOROOT}/bin"
+  - export GOPATH='/opt/.go'
+  - export VERSION=${CI_BUILD_TAG}
+  - export ARCH=amd64
+  - cd source
+  - make deb
+  - /usr/sbin/reprepro-uploader mactable_${VERSION}_${ARCH}.deb jessie stretch
+  - rm -fv mactable_${VERSION}_${ARCH}.deb
+
+armhf:
+ stage: package
+ tags:
+  - golang
+  - debian
+ only:
+  - tags
+ script:
+  - export GOROOT='/opt/go'
+  - export PATH="${PATH}:${GOROOT}/bin"
+  - export GOPATH='/opt/.go'
+  - export VERSION=${CI_BUILD_TAG}
+  - export ARCH=armhf
+  - cd source
+  - make deb
+  - /usr/sbin/reprepro-uploader mactable_${VERSION}_${ARCH}.deb jessie stretch
+  - rm -fv mactable_${VERSION}_${ARCH}.deb
