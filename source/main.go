@@ -89,7 +89,7 @@ func main() {
 	/*
 		Parse the ports of the bridge and prepare index to name map
 	*/
-	if err := parsePorts(os.Args[1]); err != nil {
+	if err := parsePorts(bridge); err != nil {
 		fmt.Printf("Failed to parse the port indexes for bridge %s!\n", bridge)
 		fmt.Println(err)
 		return
