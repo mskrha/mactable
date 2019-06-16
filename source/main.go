@@ -87,6 +87,14 @@ func main() {
 	bridge := os.Args[1]
 
 	/*
+		Check if the bridge exists
+	*/
+	if _, err := os.Stat(SYS_ROOT + bridge + "/bridge/bridge_id"); os.IsNotExist(err) {
+		fmt.Printf("Bridge %s does not exist!\n", bridge)
+		return
+	}
+
+	/*
 		Parse the ports of the bridge and prepare index to name map
 	*/
 	if err := parsePorts(bridge); err != nil {
