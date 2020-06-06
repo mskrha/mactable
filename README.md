@@ -1,3 +1,5 @@
+[![Go Report Card](https://goreportcard.com/badge/github.com/mskrha/mactable)](https://goreportcard.com/report/github.com/mskrha/mactable)
+
 ## mactable
 
 ### Description
